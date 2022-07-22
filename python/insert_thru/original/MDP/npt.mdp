@@ -1,0 +1,82 @@
+; Run control
+define                   = -DCALRES -DPROTRES
+integrator               = sd 
+dt                       = 0.004
+nsteps                   = 12500
+nstcomm                  = 1
+nstcalcenergy            = 1
+comm-mode                = Linear
+comm-grps                = System
+
+nstxout_compressed       = 1000
+nstlog                   = 1000
+nstenergy                = 1000
+nstxout                  = 0
+nstvout                  = 0
+nstfout                  = 0
+
+cutoff-scheme            = verlet
+nstlist                  = 20
+ns_type                  = grid
+pbc                      = xyz
+coulombtype              = PME
+rlist                    = 1.2
+rcoulomb                 = 1.2
+vdwtype                  = Cut-off
+vdw-modifier             = Force-switch
+rvdw_switch		 = 1.0
+rvdw                     = 1.2
+
+DispCorr                 = EnerPres
+
+tc_grps                  = MEMB SOLV SOLU
+tau_t                    = 1.0 1.0 1.0
+ref_t                    = 310.15 310.15 310.15
+
+Pcoupl                   = Berendsen 
+pcoupltype  		 = semiisotropic
+tau_p                    = 10.0
+compressibility          = 4.5e-5 4.5e-5
+ref_p                    = 1.0 1.0
+refcoord_scaling         = com
+
+gen_vel                  = no
+
+constraints              = h-bonds  
+constraint-algorithm     = lincs
+continuation             = no
+lincs-order              = 12
+
+free_energy              = yes
+init_lambda_state        = 0
+delta_lambda             = 0
+calc_lambda_neighbors    = 1        
+couple-moltype           = CAL 
+couple-lambda0           = none      
+couple-lambda1           = vdw-q     
+couple-intramol          = no
+; init_lambda_state        0    1    2    3    4    5    6    7    8    9    10   11   12   13   14    
+vdw_lambdas              = 0.00 0.10 0.20 0.40 0.60 0.80 0.90 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 
+coul_lambdas             = 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.10 0.20 0.40 0.60 0.80 0.90 1.00
+sc-alpha                 = 0.5
+sc-coul                  = yes
+sc-power                 = 1
+sc-sigma                 = 0.3
+nstdhdl                  = 100  
+
+pull                     = yes
+pull_ngroups             = 2
+pull_ncoords             = 1                        
+pull-group1-name         = MOP                      
+pull-group2-name         = MEMB 
+pull_coord1_type         = umbrella
+pull_coord1-geometry     = cylinder
+pull-cylinder-r          = 1.5
+pull-coord1-init         = ZZZ
+pull-coord1-vec          = 0 0 1
+pull-coord1-groups       = 2 1
+pull-coord1-dim          = N N Y
+pull-coord1-start        = no
+pull-coord1-k            = 2000
+pull-coord1-rate         = 0.0 
+
