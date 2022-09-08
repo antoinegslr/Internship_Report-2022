@@ -14,4 +14,7 @@ Only personal Figures are stored here.
 - Figure 3.5: Captures of the top leaflet of the POPS/POPC system at various times in simulation
 - Figure 3.6: Captures of the calcium ion in a POPS system at various levels of penetration
 - Figure 3.7: Capture of the pulling simulation with the calcium ion at z = −1.2 nm
-- Figure 3.8: Potential of Mean Force associated to the translocation of a Calcium ion through a full POPS membrane, using the pull method
+- Figure 3.8: Potential of Mean Force associated to the translocation of a calcium ion through a full POPS membrane, using the pull method
+- Figure 3.9: PMF curves (a) comparing insertion and pull methods and (b) comparing the two extreme lipid composition cases with the insertion method
+- Figure 3.10: Captures of windows containing the ion (a) at the water/membrane interface and (b) inside the membrane
+- Figure 3.11: Potential of Mean Force associated to the translocation of a calcium ion through a full POPS membrane containing the sequence 115-129 of the Lys49-PLA2 like protein and in the same control membrane, using the insertion method
