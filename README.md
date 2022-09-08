@@ -8,6 +8,5 @@ Ce *repositery* est consacré à la mise à disposition du rapport de stage colo
 - Internship-Report.pdf -- The report itself
 - Article.pdf
 - Figures/ -- Figures are numeroted in the same way as in the report
-  - Figure1.pdf
 - Animations/
 
